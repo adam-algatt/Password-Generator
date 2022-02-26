@@ -39,10 +39,11 @@ var generatePassword = function (int) {
     //get random number 1-4 to call pass param
     var randomNumberCeiling = (paramArr.length - 1);
     var randomParam = passParameters[Math.floor(Math.random() * randomNumberCeiling)];
-    var callback = randomCharCallback.randomParam;
+    var callback = randomCharCallback[randomParam]; 
     console.log(callback);
+    callback;
   }
-  return callback;
+  
 };
 
 
@@ -87,7 +88,7 @@ var getLength = function () {
   } else {
  
   }
-  passLength = lengthPrompt; 
+  passLength = parseInt(lengthPrompt); 
   populateParameters();
   return passLength;
 };
