@@ -23,3 +23,16 @@ THEN a password is generated that matches the selected criteria
 
 WHEN the password is generated
 THEN the password is either displayed in an alert or written to the page
+
+//  Write password to the #password input
+// function writePassword(arr) {
+//   var password = generatePassword();
+//   var passwordText = document.querySelector("#password");
+//   passwordText.value = password;
+// }  
+//  Add event listener to generate button
+// generateBtn.addEventListener("click", writePassword);  
+//  Random # syntax Math.floor((Math.random() * passLength) + 1);
+// var password = generatePassword();
+// var passwordText = document.querySelector("#password");
+// 
