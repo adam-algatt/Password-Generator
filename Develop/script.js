@@ -6,43 +6,49 @@ var paramArr = [];
 var passLength = 0;
 var count = 0;
 var whatLength = "How long would you like your password to be?";
+var generatedPassword = [];
 
-var lowercase = function() {
-console.log('1');
+ function lowercase() {
+  generatedPassword.push(String.fromCharCode(Math.random() * (123 - 97) + 97));
+  return generatedPassword;
 };
 
-var uppercase = function() {
-  console.log('2');
+ function uppercase() {
+  generatedPassword.push(String.fromCharCode(Math.random() * (91 - 65) + 65));
+  return generatedPassword;
 };
 
-var numeric = function() {
-  console.log('3');
+ function numeric() {
+  generatedPassword.push(String.fromCharCode(Math.random() * (58 - 48) + 48));
+  return generatedPassword;
 };
 
-var special = function() {
-  console.log('4');
+function special() {
+  generatedPassword.push(String.fromCharCode(Math.random() * (48 - 33) + 33));
+  return generatedPassword;
 };
 
 
 var randomCharCallback = {
-  lowercase: lowercase,
-  uppercase: uppercase,
-  numeric: numeric,
-  special: special
+  lowercase: lowercase(),
+  uppercase: uppercase(),
+  numeric: numeric(),
+  special: special()
 };
 
 
 //Calls appropriate function in randomParamGenerator to generate random character
-var generatePassword = function (int) {
+var generatePassword = function () {
   console.log('why god why?!');
-  for (i = 0; i < int; i++) {
+  for (i = 0; i < 12; i++) {
     //get random number 1-4 to call pass param
     var randomNumberCeiling = (paramArr.length - 1);
-    var randomParam = passParameters[Math.floor(Math.random() * randomNumberCeiling)];
-    var callback = randomCharCallback[randomParam]; 
-    console.log(callback);
-    callback;
+    // console.log(typeof(randomParam));
+    randomCharCallback[passParameters[Math.floor(Math.random() * randomNumberCeiling)]]; 
+    // console.log(callRandom);
+    
   }
+  console.log('password:', generatedPassword);
   
 };
 
@@ -70,7 +76,7 @@ var populateParameters = function () {
   }
   console.log(paramArr);
   console.log(count);
-  console.log(passLength);
+  console.log('passlength:', passLength);
   generatePassword(passLength);
   return paramArr;
 };
