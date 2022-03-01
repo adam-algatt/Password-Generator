@@ -10,7 +10,7 @@ length, and character types. After the user answers all the prompts a password i
 * Javascript
 
 ### Website
-https://adam-algatt.github.io/password-generator
+https://adam-algatt.github.io/Password-Generator
 
 #### Contribution
 Made by Adam Algatt
